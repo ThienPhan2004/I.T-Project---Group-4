@@ -1,1 +1,1 @@
-Do an Cong Nghe Thong Tin
+Đồ án công nghệ thông tin
