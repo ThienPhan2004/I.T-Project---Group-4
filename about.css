@@ -1,0 +1,119 @@
+/* Cài đặt hình nền cho toàn bộ trang */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.7; /* Tăng khoảng cách dòng */
+
+  /* Đặt hình nền */
+  background-image: url("/background.png"); /* Đường dẫn đến hình ảnh nền */
+  background-size: cover; /* Để hình nền bao phủ toàn bộ màn hình */
+  background-position: center; /* Căn giữa hình nền */
+  background-repeat: no-repeat; /* Không lặp lại hình nền */
+  background-attachment: fixed; /* Giữ hình nền cố định khi cuộn trang */
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #5b3892;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: none;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+section {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.4); /* Nền trắng với độ trong suốt 50% */
+  backdrop-filter: blur(8.5px); /* Làm mờ nội dung phía sau */
+}
+section h2 {
+  color: #2b1849; /* Màu chữ cho h2 */
+}
+section h3 {
+  color: #2b1849; /* Màu chữ cho h3 */
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000000;
+}
+
+/* Thêm vào styles.css */
+#scrollToTop {
+  display: none; /* Ẩn nút ban đầu */
+  position: fixed; /* Vị trí cố định */
+  bottom: 25px; /* Cách đáy 20px */
+  right: 25px; /* Cách phải 20px */
+  background-color: #5b3892; /* Màu nền */
+  color: white; /* Màu chữ */
+  border: none; /* Không viền */
+  padding: 10px 15px; /* Khoảng cách trong nút */
+  border-radius: 5px; /* Bo tròn góc */
+  cursor: pointer; /* Con trỏ chuột */
+  font-size: 25px; /* Kích thước chữ */
+}
+#scrollToTop:hover {
+  background-color: #5b3892; /* Màu nền khi hover */
+}
+
+.center-text {
+  text-align: center; /* Căn giữa văn bản */
+  margin: 20px 0; /* Khoảng cách trên và dưới */
+}
+
+/* styles.css */
+body {
+  user-select: none; /* Ngăn không cho chọn và bôi đen văn bản */
+}
+
+footer {
+  background-color: #5b3892;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: -ms-page;
+  bottom: 0;
+  width: 100%;
+}
+
+.video-container {
+  margin: 20px 0;
+  text-align: center;
+}
+iframe {
+  width: 100%;
+  height: 400px;
+  max-width: 800px; /* Giới hạn chiều rộng tối đa */
+  border-radius: 8px; /* Bo góc với bán kính 15px */
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkmate - Trang Chủ</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      body {
+        user-select: none; /* Ngăn không cho chọn và bôi đen văn bản */
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <!-- Add the logo image -->
+      <div class="logo-container">
+        <img src="/logo-color.png" alt="Website Logo" class="logo" />
+      </div>
+
+      <h1 id="page-title">Chào Mừng Đến Với Trang Web Của Tôi</h1>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Trang Chủ</a></li>
+          <li><a href="/webcon/about.html">Giới Thiệu</a></li>
+          <li><a href="/webcon/services.html">Dịch Vụ</a></li>
+          <li><a href="/webcon/contact.html">Liên Hệ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Ô tìm kiếm -->
+    <div class="search-bar">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Tìm kiếm bất cứ điều gì..."
+      />
+      <button onclick="searchImages()">Tìm kiếm</button>
+    </div>
+
+    <div>
+      <div class="content">
+        <h2>Giới Thiệu Chung</h2>
+        <p>
+          Đây là trang web dùng để chơi các tựa game cổ điển như: Sodoku,
+          Minesweeper, Caro...
+        </p>
+        <p>
+          Ngoài ra, bạn có thể xem thông tin giới thiệu và cách chơi các tựa
+          game nữa.
+        </p>
+        <p>Chúc bạn chơi game vui vẻ!</p>
+      </div>
+    </div>
+
+    <div class="content">
+      <h2>Danh sách các tựa game</h2>
+      <p>Nhấn chọn 1 trong các tựa game dưới đây và bắt đầu chơi.</p>
+      <br />
+
+      <div class="image-gallery">
+        <div class="image-box" data-description="Caro">
+          <a href="/webgame/game1.html">
+            <div class="image-container">
+              <img src="/gameImage/caro.jpg" alt="Caro" class="zoom-image" />
+              <p>Caro</p>
+            </div>
+          </a>
+        </div>
+
+        <a href="webgame/game2.html">
+          <div class="image-container">
+            <img src="/gameImage/chess.png" alt="Cờ Vua" class="zoom-image" />
+            <p>Cờ Vua</p>
+          </div>
+        </a>
+
+        <a href="/webgame/game3.html">
+          <div class="image-container">
+            <img
+              src="/gameImage/Snake-Xenzia.png"
+              alt="Rắn Săn Mồi"
+              class="zoom-image"
+            />
+            <p>Rắn Săn Mồi</p>
+          </div>
+        </a>
+
+        <a href="/webgame/game4.html">
+          <div class="image-container">
+            <img src="/gameImage/sodoku.png" alt="Sodoku" class="zoom-image" />
+            <p>Sodoku</p>
+          </div>
+        </a>
+
+        <a href="/webgame/game5.html">
+          <div class="image-container">
+            <img
+              src="/gameImage/minesweeper.png"
+              alt="Minesweeper"
+              class="zoom-image"
+            />
+            <p>Minesweeper</p>
+          </div>
+        </a>
+
+        <a href="/webgame/game6.html">
+          <div class="image-container">
+            <img
+              src="/gameImage/8Puzzle.png"
+              alt="8 Puzzle"
+              class="zoom-image"
+            />
+            <p>8 Puzzle</p>
+          </div>
+        </a>
+
+        <a href="/webgame/game7.html">
+          <div class="image-container">
+            <img
+              src="/gameImage/WordFinding.png"
+              alt="Word Finding"
+              class="zoom-image"
+            />
+            <p>Word Finding</p>
+          </div>
+        </a>
+
+        <a href="/webgame/game8.html">
+          <div class="image-container">
+            <img
+              src="/gameImage/Unscramble.png"
+              alt="Unscramble"
+              class="zoom-image"
+            />
+            <p>Unscramble</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; Copyright. All rights reserved.</p>
+    </footer>
+
+    <!-- Thêm nút trở lại đầu trang -->
+    <<button id="scrollToTop" onclick="scrollToTop()">↑</button>
+
+    <script src="AutoScrollButton.js"></script>
+    <script src="search.js"></script>
+  </body>
+</html>
