@@ -139,15 +139,14 @@ showAnswerBtn.addEventListener("click", () => {
 
 // End the game and display the final score
 const endGame = () => {
-  messageElement.innerHTML = `Time's up! Your final score is: <span style="font-size: 24px; color: red;">${score}</span>`;
-  inputField.style.display = "none";
-  showEndOptions(); // Show end options as a pop-up
+  inputField.style.display = "none"; // Ẩn ô nhập liệu
+  showEndOptions(); // Hiển thị popup kết thúc
 };
 
 // Show options to start a new game or return to the menu as a pop-up
 const showEndOptions = () => {
   const endOverlay = document.createElement("div");
-  endOverlay.classList.add("end-overlay"); // Use CSS to style this
+  endOverlay.classList.add("end-overlay"); // Áp dụng CSS cho lớp phủ
 
   const endBox = document.createElement("div");
   endBox.classList.add("end-box");
@@ -177,6 +176,7 @@ const showEndOptions = () => {
   endOverlay.appendChild(endBox);
   document.body.appendChild(endOverlay);
 };
+
 
 refreshBtn.addEventListener("click", initGame);
 
