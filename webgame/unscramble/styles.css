@@ -1,0 +1,514 @@
+
+/* Cài đặt hình nền cho toàn bộ trang */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+
+  /* Đặt hình nền */
+  background-image: url("/background.png"); /* Đường dẫn đến hình ảnh nền */
+  background-size: cover; /* Để hình nền bao phủ toàn bộ màn hình */
+  background-position: center; /* Căn giữa hình nền */
+  background-repeat: no-repeat; /* Không lặp lại hình nền */
+  background-attachment: fixed; /* Giữ hình nền cố định khi cuộn trang */
+  background-color: #f4f4f4;
+}
+
+/* Logo styling */
+.logo-container {
+  position: relative;
+  left: 20px; /* Adjust positioning */
+  top: 20px;
+}
+
+.logo {
+  width: 150px; /* Adjust the size here */
+  height: auto; /* This keeps the aspect ratio */
+}
+
+header {
+  background-color: #5b3892;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+/* Định nghĩa màu nền cho header */
+header {
+  background-color: #5b3892; /* Màu tím đậm */
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Định nghĩa màu nền tím cho navbar */
+.navbar {
+  background-color: #5b3892 !important; /* Màu tím đậm */
+  margin-top: -20px; /* Giảm khoảng cách giữa header và navbar */
+}
+
+/* Căn chỉnh và tạo kiểu cho các mục trong navbar */
+.navbar-nav .nav-item .nav-link {
+  color: #ffffff;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #ddd; /* Màu chữ khi hover */
+}
+
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: none;
+}
+
+.content {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.4); /* Nền trắng với độ trong suốt 50% */
+  backdrop-filter: blur(8.5px); /* Làm mờ nội dung phía sau */
+  margin: 20px;
+  border-radius: 10px; /* Tùy chọn: bo góc mềm mại */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Đường viền mờ để tạo hiệu ứng kính */
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px; /* Khoảng cách giữa các hình ảnh */
+}
+
+.image-container {
+  text-align: center; /* Căn giữa mô tả bên dưới hình ảnh */
+  color: white; /* Đổi màu chữ mô tả sang màu trắng */
+}
+
+.image-container img {
+  max-width: 100%; /* Đảm bảo hình ảnh có kích thước tối đa là 100% chiều rộng của ô chứa */
+  border-radius: 5px; /* Bo tròn góc hình ảnh */
+  width: 100%; /* Chiều rộng hình ảnh bằng với khung */
+  height: 300px; /* Đặt chiều cao cố định để hình vuông */
+  object-fit: cover; /* Crop hình ảnh theo khung hình vuông, giữ đúng tỷ lệ */
+}
+
+/* auto_zoom */
+.zoom-image {
+  width: 300px;
+  height: auto;
+  transition: transform 0.3s ease; /* Làm cho hiệu ứng phóng to mượt mà */
+}
+
+.zoom-image:hover {
+  transform: scale(1.05); /* Phóng to hình ảnh khi hover (1.2 lần) */
+}
+
+/* Thêm vào styles.css */
+#scrollToTop {
+  display: none; /* Ẩn nút ban đầu */
+  position: fixed; /* Vị trí cố định */
+  bottom: 25px; /* Cách đáy 20px */
+  right: 25px; /* Cách phải 20px */
+  background-color: #5b3892; /* Màu nền */
+  color: white; /* Màu chữ */
+  border: none; /* Không viền */
+  padding: 10px 15px; /* Khoảng cách trong nút */
+  border-radius: 5px; /* Bo tròn góc */
+  cursor: pointer; /* Con trỏ chuột */
+  font-size: 25px; /* Kích thước chữ */
+}
+#scrollToTop:hover {
+  background-color: #5b3892; /* Màu nền khi hover */
+}
+
+/* styles.css */
+body {
+  user-select: none; /* Ngăn không cho chọn và bôi đen văn bản */
+}
+
+/* Ô tìm kiếm */
+.search-bar {
+  text-align: center;
+  margin: 20px 0;
+}
+.search-bar input {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.search-bar button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.search-bar button:hover {
+  background-color: #555;
+}
+
+footer {
+  background-color: #5b3892;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: -ms-page;
+  bottom: 0;
+  width: 100%;
+}
+input[type="text"] {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  width: 80%;
+  max-width: 300px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  background: linear-gradient(135deg, #f0f0f0, #e8e8e8);
+  border: 2px solid transparent;
+  border-radius: 25px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  outline: none;
+}
+
+/* Hover effect */
+input[type="text"]:hover {
+    background: linear-gradient(135deg, #f5f5f5, #ffffff);
+    border: 2px solid #8a2be2; /* Purple border on hover */
+    box-shadow: 0px 6px 12px rgba(138, 43, 226, 0.3);
+}
+
+/* Focus effect */
+input[type="text"]:focus {
+    background: linear-gradient(135deg, #e0e0ff, #ffffff);
+    border: 2px solid #8a2be2;
+    color: #333;
+    box-shadow: 0px 0px 8px 4px rgba(138, 43, 226, 0.4);
+}
+
+/* Animation when typing */
+input[type="text"]::placeholder {
+    color: #aaa;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+input[type="text"]:focus::placeholder {
+    opacity: 0.5; /* Fades out placeholder text on focus */
+}
+
+/* Keyframe animations */
+@keyframes glow {
+    0% {
+        box-shadow: 0px 0px 8px rgba(138, 43, 226, 0.3);
+    }
+    50% {
+        box-shadow: 0px 0px 12px rgba(138, 43, 226, 0.5);
+    }
+    100% {
+        box-shadow: 0px 0px 8px rgba(138, 43, 226, 0.3);
+    }
+}
+
+/* Applying glow animation */
+input[type="text"]:focus {
+    animation: glow 1.5s infinite alternate;
+}
+
+.refresh-word, .check-word, .show-answer {
+  background: linear-gradient(135deg, #8a2be2, #d17ff7); /* Purple gradient */
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.refresh-word:hover, .check-word:hover, .show-answer:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.refresh-word:active, .check-word:active, .show-answer:active {
+  transform: translateY(1px);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.content {
+  background: linear-gradient(135deg, #f3e6ff, #e6ccff); /* Gradient background */
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15), 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 650px;
+  margin: 30px auto;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.content:hover {
+  transform: translateY(-5px); /* Lift effect */
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.25), 0px 6px 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+}
+
+/* Additional styling for inner elements to harmonize with the card */
+.content h2 {
+  font-size: 2em;
+  color: #6a0dad; /* Matching purple color */
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.content p, .content span, .content .hint, .content .time, .content .score {
+  font-size: 1.1em;
+  color: #333;
+}
+
+.content input[type="text"] {
+  width: 80%;
+  max-width: 300px;
+  padding: 12px;
+  font-size: 1em;
+  border: 2px solid #6a0dad;
+  border-radius: 25px;
+  text-align: center;
+  background: #f3e6ff;
+  color: #6a0dad;
+  margin-top: 20px;
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.content input[type="text"]:focus {
+  box-shadow: 0px 0px 10px rgba(106, 13, 173, 0.5);
+  outline: none;
+  transform: scale(1.05); /* Slight enlargement on focus */
+}
+
+.content button {
+  padding: 12px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(45deg, #7f00ff, #e100ff);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  margin: 10px 5px;
+}
+
+.content button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.content button:active {
+  transform: translateY(1px);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.letter-box {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #6a0dad;
+  background-color: #f3e6ff;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.letter-box:hover {
+  transform: scale(1.1);
+}
+.scrambled-letters-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.letter-box {
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.difficulty-selector {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.difficulty-selector label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.difficulty-selector select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+/* Overlay for the pop-up */
+.end-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Pop-up box styling */
+.end-box {
+  background: linear-gradient(145deg, #f5f5ff, #eaeaff);
+  padding: 30px 40px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 320px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  font-family: 'Poppins', sans-serif;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Final Score Text */
+.end-box p {
+  font-size: 24px;
+  font-weight: 600;
+  color: #5b3892;
+  margin-bottom: 20px;
+}
+
+.end-box p span {
+  color: #ff3333;
+  font-weight: bold;
+  font-size: 26px;
+}
+
+/* Button styling */
+.end-box button {
+  margin: 10px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* New Game Button */
+.new-game-btn {
+  background: linear-gradient(145deg, #3ecf8e, #32a06f);
+  box-shadow: 0 4px 10px rgba(62, 207, 142, 0.3);
+}
+
+.new-game-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(62, 207, 142, 0.5);
+}
+
+/* Back to Menu Button */
+.menu-btn {
+  background: linear-gradient(145deg, #ff5f5f, #d94545);
+  box-shadow: 0 4px 10px rgba(255, 95, 95, 0.3);
+}
+
+.menu-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(255, 95, 95, 0.5);
+}
+
+/* Animation for the pop-up */
+.end-box {
+  animation: popUp 0.3s ease-out;
+}
+
+@keyframes popUp {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* Style for the congratulatory message */
+#message.correct {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #4CAF50; /* A nice green color */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  background-color: #eaffea; /* Light green background */
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+  display: inline-block;
+}
+#message:empty {
+  display: none;
+}
+
+/* Additionally, remove any focus outline for the message element */
+#message:focus {
+  outline: none;
+  box-shadow: none;
+}
+#message.incorrect {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #FF4C4C; /* Màu đỏ cho tin nhắn sai */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  background-color: #ffe5e5; /* Nền đỏ nhạt */
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+  display: inline-block;
+}
+
