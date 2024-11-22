@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Finding</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+
+      .game-container {
+        text-align: center;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .grid {
+        display: inline-grid;
+        gap: 4px;
+        padding: 15px;
+        background-color: #eee;
+        border-radius: 5px;
+        margin: 20px 0;
+      }
+
+      .cell {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        cursor: pointer;
+        user-select: none;
+        font-size: 20px;
+        transition: all 0.2s;
+        margin: 1px; /* Thêm margin cho mỗi ô */
+      }
+
+      .cell.selected {
+        background-color: #a8d5ff;
+      }
+
+      .cell.found {
+        background-color: #90ee90;
+        font-weight: bold;
+      }
+
+      .word-list {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 20px 0;
+      }
+
+      .word {
+        padding: 5px 15px;
+        background-color: #f0f0f0;
+        border-radius: 15px;
+        transition: all 0.3s;
+      }
+
+      .word.found {
+        background-color: #90ee90;
+        font-weight: bold;
+      }
+
+      .stats {
+        font-size: 1.2em;
+        margin: 10px 0;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin: 5px;
+      }
+
+      .btn:hover {
+        background-color: #45a049;
+      }
+
+      @keyframes victory {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .victory {
+        animation: victory 0.5s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Game</h1>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Trang Chủ</a></li>
+          <li><a href="/webcon/about.html">Giới Thiệu</a></li>
+          <li><a href="/webcon/services.html">Dịch Vụ</a></li>
+          <li><a href="/webcon/contact.html">Liên Hệ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="content">
+      <h1>Word Finding</h1>
+    </div>
+
+    <div class="content">
+      <div class="game-container">
+        <h1>Word Search Game</h1>
+        <div class="stats" id="stats">Time: 0:00</div>
+        <div class="word-list" id="word-list"></div>
+        <div class="grid" id="grid"></div>
+        <button class="btn" onclick="newGame()">New Game</button>
+        <button class="btn" onclick="showHint()">Hint</button>
+      </div>
+      <script src="wordfinding.js"></script>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 Copyright. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

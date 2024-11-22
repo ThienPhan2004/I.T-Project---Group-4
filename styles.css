@@ -1,0 +1,149 @@
+/* Cài đặt hình nền cho toàn bộ trang */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+
+  /* Đặt hình nền */
+  background-image: url("/background.png"); /* Đường dẫn đến hình ảnh nền */
+  background-size: cover; /* Để hình nền bao phủ toàn bộ màn hình */
+  background-position: center; /* Căn giữa hình nền */
+  background-repeat: no-repeat; /* Không lặp lại hình nền */
+  background-attachment: fixed; /* Giữ hình nền cố định khi cuộn trang */
+  background-color: #f4f4f4;
+}
+
+/* Logo styling */
+.logo-container {
+  position: relative;
+  left: 20px; /* Adjust positioning */
+  top: 20px;
+}
+
+.logo {
+  width: 150px; /* Adjust the size here */
+  height: auto; /* This keeps the aspect ratio */
+}
+
+header {
+  background-color: #5b3892;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: none;
+}
+
+.content {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.4); /* Nền trắng với độ trong suốt 50% */
+  backdrop-filter: blur(8.5px); /* Làm mờ nội dung phía sau */
+  margin: 20px;
+  border-radius: 10px; /* Tùy chọn: bo góc mềm mại */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Đường viền mờ để tạo hiệu ứng kính */
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px; /* Khoảng cách giữa các hình ảnh */
+}
+
+.image-container {
+  text-align: center; /* Căn giữa mô tả bên dưới hình ảnh */
+  color: white; /* Đổi màu chữ mô tả sang màu trắng */
+}
+
+.image-container img {
+  max-width: 100%; /* Đảm bảo hình ảnh có kích thước tối đa là 100% chiều rộng của ô chứa */
+  border-radius: 5px; /* Bo tròn góc hình ảnh */
+  width: 100%; /* Chiều rộng hình ảnh bằng với khung */
+  height: 300px; /* Đặt chiều cao cố định để hình vuông */
+  object-fit: cover; /* Crop hình ảnh theo khung hình vuông, giữ đúng tỷ lệ */
+}
+
+/* auto_zoom */
+.zoom-image {
+  width: 300px;
+  height: auto;
+  transition: transform 0.3s ease; /* Làm cho hiệu ứng phóng to mượt mà */
+}
+
+.zoom-image:hover {
+  transform: scale(1.05); /* Phóng to hình ảnh khi hover (1.2 lần) */
+}
+
+/* Thêm vào styles.css */
+#scrollToTop {
+  display: none; /* Ẩn nút ban đầu */
+  position: fixed; /* Vị trí cố định */
+  bottom: 25px; /* Cách đáy 20px */
+  right: 25px; /* Cách phải 20px */
+  background-color: #5b3892; /* Màu nền */
+  color: white; /* Màu chữ */
+  border: none; /* Không viền */
+  padding: 10px 15px; /* Khoảng cách trong nút */
+  border-radius: 5px; /* Bo tròn góc */
+  cursor: pointer; /* Con trỏ chuột */
+  font-size: 25px; /* Kích thước chữ */
+}
+#scrollToTop:hover {
+  background-color: #5b3892; /* Màu nền khi hover */
+}
+
+/* styles.css */
+body {
+  user-select: none; /* Ngăn không cho chọn và bôi đen văn bản */
+}
+
+/* Ô tìm kiếm */
+.search-bar {
+  text-align: center;
+  margin: 20px 0;
+}
+.search-bar input {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.search-bar button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.search-bar button:hover {
+  background-color: #555;
+}
+
+footer {
+  background-color: #5b3892;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: -ms-page;
+  bottom: 0;
+  width: 100%;
+}

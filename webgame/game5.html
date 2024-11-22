@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minesweeper</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .container {
+        text-align: center;
+        margin: 20px;
+        font-family: Arial, sans-serif;
+      }
+      #menu {
+        margin: 20px;
+      }
+      .difficulty-btn {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+      .difficulty-btn:hover {
+        background-color: #45a049;
+      }
+      #game-container {
+        display: none;
+      }
+      #grid {
+        display: inline-block;
+        background-color: #ccc;
+        padding: 10px;
+      }
+      .cell {
+        width: 30px;
+        height: 30px;
+        background-color: #ddd;
+        border: 1px solid #999;
+        display: inline-block;
+        margin: 1px;
+        vertical-align: top;
+        line-height: 30px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .cell.revealed {
+        background-color: #eee;
+      }
+      .cell.mine {
+        background-color: #ff0000;
+      }
+      .cell.flagged {
+        background-color: #ffff00;
+      }
+      #game-info {
+        margin: 20px;
+        font-size: 18px;
+      }
+      #back-btn {
+        padding: 10px 20px;
+        margin: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Game</h1>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Trang Chủ</a></li>
+          <li><a href="/webcon/about.html">Giới Thiệu</a></li>
+          <li><a href="/webcon/services.html">Dịch Vụ</a></li>
+          <li><a href="/webcon/contact.html">Liên Hệ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="content">
+      <h1>Minesweeper</h1>
+    </div>
+
+    <div class="content">
+      <div class="container">
+        <h1>Minesweeper</h1>
+        <div id="menu">
+          <h2>Chọn độ khó</h2>
+          <button class="difficulty-btn" onclick="startGame('easy')">
+            Dễ (9x9, 10 bom)
+          </button>
+          <button class="difficulty-btn" onclick="startGame('medium')">
+            Trung bình (16x16, 40 bom)
+          </button>
+          <button class="difficulty-btn" onclick="startGame('hard')">
+            Khó (30x16, 99 bom)
+          </button>
+        </div>
+        <div id="game-container">
+          <div id="game-info">
+            <span>Số bom còn lại: <span id="mines-left">0</span></span>
+            <span style="margin-left: 20px"
+              >Thời gian: <span id="timer">0</span>s</span
+            >
+          </div>
+          <div id="grid"></div>
+          <button id="back-btn" onclick="backToMenu()">Quay lại menu</button>
+        </div>
+      </div>
+      <script src="minesweeper.js"></script>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 Copyright. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

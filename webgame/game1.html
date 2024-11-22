@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caro</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .container {
+        text-align: center;
+        margin: 20px;
+      }
+      canvas {
+        border: 1px solid #000;
+        margin: 20px auto;
+        display: none;
+      }
+      .game-info {
+        text-align: center;
+        margin: 10px;
+        font-size: 20px;
+      }
+      .reset-btn {
+        display: none;
+        margin: 10px auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .mode-selection {
+        text-align: center;
+        padding: 20px;
+      }
+      .mode-btn {
+        padding: 15px 30px;
+        font-size: 18px;
+        margin: 10px;
+        cursor: pointer;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+      .mode-btn:hover {
+        background-color: #45a049;
+      }
+      .back-btn {
+        display: none;
+        margin: 10px auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Game</h1>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Trang Chủ</a></li>
+          <li><a href="/webcon/about.html">Giới Thiệu</a></li>
+          <li><a href="/webcon/services.html">Dịch Vụ</a></li>
+          <li><a href="/webcon/contact.html">Liên Hệ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="content">
+      <h1>Caro</h1>
+    </div>
+
+    <div class="content">
+      <div class="container">
+        <div class="mode-selection" id="modeSelection">
+          <h1>Chọn chế độ chơi</h1>
+          <button class="mode-btn" onclick="startGame('pvp')">
+            Người với Người
+          </button>
+          <button class="mode-btn" onclick="startGame('pvc')">
+            Người với Máy
+          </button>
+        </div>
+        <div class="game-info" id="gameInfo" style="display: none">
+          Lượt của X
+        </div>
+        <button class="back-btn" id="backBtn" onclick="backToMenu()">
+          Quay lại menu
+        </button>
+        <button class="reset-btn" id="resetBtn" onclick="resetGame()">
+          Chơi lại
+        </button>
+      </div>
+      <script src="caro.js"></script>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 Copyright. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
