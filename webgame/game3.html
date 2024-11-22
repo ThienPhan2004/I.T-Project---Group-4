@@ -3,8 +3,78 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Game 1</title>
+    <title>Rắn Săn Mồi</title>
     <link rel="stylesheet" href="/styles.css" />
+    <style>
+      body {
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+      }
+
+      .game-container {
+        text-align: center;
+      }
+
+      #game-canvas {
+        background: #fff;
+        border: 2px solid #333;
+      }
+
+      .menu {
+        margin: 20px;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        margin: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+
+      .btn:hover {
+        background-color: #45a049;
+      }
+
+      #score {
+        font-size: 24px;
+        margin: 10px;
+      }
+
+      .screen {
+        display: none;
+      }
+
+      .screen.active {
+        display: block;
+      }
+
+      #level-select {
+        margin: 20px;
+      }
+
+      .level-btn {
+        display: block;
+        width: 200px;
+        margin: 10px auto;
+        padding: 15px;
+        font-size: 18px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .level-btn:hover {
+        background-color: #45a049;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -23,6 +93,35 @@
       <h1>Rắn Săn Mồi</h1>
     </div>
 
+    <div class="content">
+      <div class="game-container">
+        <div id="menu-screen" class="screen active">
+          <h1>Snake Game</h1>
+          <div id="level-select">
+            <button class="level-btn" onclick="startLevel(1)">
+              Level 1: Free Play
+            </button>
+            <button class="level-btn" onclick="startLevel(2)">
+              Level 2: Obstacles
+            </button>
+            <button class="level-btn" onclick="startLevel(3)">
+              Level 3: Walled Garden
+            </button>
+          </div>
+        </div>
+
+        <div id="game-screen" class="screen">
+          <div id="score">Score: 0</div>
+          <canvas id="game-canvas" width="600" height="400"></canvas>
+          <div class="menu">
+            <button class="btn" onclick="pauseGame()">Pause</button>
+            <button class="btn" onclick="resetGame()">Reset</button>
+            <button class="btn" onclick="showMenu()">Menu</button>
+          </div>
+        </div>
+        <script src="ransanmoi.js"></script>
+      </div>
+    </div>
     <footer>
       <p>&copy; 2024 Copyright. All rights reserved.</p>
     </footer>
