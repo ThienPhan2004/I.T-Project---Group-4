@@ -1,77 +1,93 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Game Unscramble</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Ensure this path is correct -->
-</head>
-<body>
+    <link rel="icon" type="image/png" href="/webImage/favicon.png" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Ensure this path is correct -->
+  </head>
+  <body>
+    <header class="bg-purple text-white text-center py-3 overlay-header">
+      <h1 class="display-4">Unscramble</h1>
+    </header>
 
-<header class="bg-purple text-white text-center py-3 overlay-header">
-    <h1 class="display-4">Unscramble</h1>
-</header>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-purple">
-    <div class="container justify-content-center">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
+      <div class="container justify-content-center">
         <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="../../index.html">Trang Chủ</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../webcon/about.html">Giới Thiệu</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../webcon/services.html">Dịch Vụ</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../webcon/contact.html">Liên Hệ</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">Trang Chủ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../webcon/about.html">Giới Thiệu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../webcon/comment.html">Bình Luận</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../webcon/contact.html">Liên Hệ</a>
+          </li>
         </ul>
-    </div>
-</nav>
+      </div>
+    </nav>
 
-<div class="container my-5">
-    <div class="content text-center">
-        <button onclick="goToMenu()" class="back-to-menu">← Back to Menu</button>
+    <div class="container my-5">
+      <div class="content text-center">
+        <button onclick="goToMenu()" class="back-to-menu">
+          ← Back to Menu
+        </button>
         <div class="score">
-            <p><span id="scoreLabel">Score: </span><b id="scoreValue">0</b></p>
+          <p><span id="scoreLabel">Score: </span><b id="scoreValue">0</b></p>
         </div>
         <div class="scrambled-letters-container">
-            <!-- Each letter will be inserted here dynamically -->
+          <!-- Each letter will be inserted here dynamically -->
         </div>
         <p class="word-class-p">
-            <span class="word-class"></span>
+          <span class="word-class"></span>
         </p>
         <div class="details">
-            <p class="hint">Hint: <span></span></p>
-            <p class="time">TIME LEFT: <span><b>60</b>s</span></p>
+          <p class="hint">Hint: <span></span></p>
+          <p class="time">
+            TIME LEFT: <span><b>60</b>s</span>
+          </p>
         </div>
         <input
-            type="text"
-            spellcheck="false"
-            placeholder="Enter a valid word"
-            autocomplete="off"
-            onPaste="return false;"
+          type="text"
+          spellcheck="false"
+          placeholder="Enter a valid word"
+          autocomplete="off"
+          onPaste="return false;"
         />
         <p id="message"></p>
         <div class="buttons">
-            <button class="refresh-word">Refresh Word</button>
-            <button class="show-answer">Show Answer</button>
+          <button class="refresh-word">Refresh Word</button>
+          <button class="show-answer">Show Answer</button>
         </div>
         <div class="difficulty-selector">
-            <label for="difficulty">Chọn độ khó:</label>
-            <select id="difficulty">
-              <option value="Easy">Dễ</option>
-              <option value="Medium">Trung bình</option>
-              <option value="Hard">Khó</option>
-            </select>
-          </div> 
+          <label for="difficulty">Chọn độ khó:</label>
+          <select id="difficulty">
+            <option value="Easy">Dễ</option>
+            <option value="Medium">Trung bình</option>
+            <option value="Hard">Khó</option>
+          </select>
+        </div>
+      </div>
     </div>
-    
-    
-</div>
 
-<footer class="bg-dark text-white text-center py-3">
-    <p class="mb-0">&copy; 2024 Copyright. All rights reserved.</p>
-</footer>
+    <footer class="bg-dark text-white text-center py-3">
+      <p class="mb-0">&copy; 2024 Copyright. All rights reserved.</p>
+    </footer>
 
-<script src="js/words.js"></script> <!-- Words file -->
-<script src="js/script.js"></script> <!-- Main game script -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script src="js/words.js"></script>
+    <!-- Words file -->
+    <script src="js/script.js"></script>
+    <!-- Main game script -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

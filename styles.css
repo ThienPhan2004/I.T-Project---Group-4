@@ -5,7 +5,7 @@ body {
   font-family: Arial, sans-serif;
 
   /* Đặt hình nền */
-  background-image: url("/background.png"); /* Đường dẫn đến hình ảnh nền */
+  background-image: url("/webImage/background.png"); /* Đường dẫn đến hình ảnh nền */
   background-size: cover; /* Để hình nền bao phủ toàn bộ màn hình */
   background-position: center; /* Căn giữa hình nền */
   background-repeat: no-repeat; /* Không lặp lại hình nền */
