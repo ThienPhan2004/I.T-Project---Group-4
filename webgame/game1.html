@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Caro</title>
+    <link rel="icon" type="image/png" href="/webImage/favicon.png" />
     <link rel="stylesheet" href="/styles.css" />
     <style>
       .container {
@@ -51,6 +52,88 @@
         font-size: 16px;
         cursor: pointer;
       }
+      .game-container {
+        text-align: center;
+        background-color: white;
+        padding: 30px;
+        border-radius: 25px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 90%;
+        margin: 20px;
+      }
+      .puzzle-board {
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(3, 100px);
+        gap: 5px;
+        background-color: #333;
+        padding: 8px;
+        border-radius: 15px;
+        margin: 20px auto;
+        width: fit-content;
+      }
+      .tile {
+        width: 100px;
+        height: 100px;
+        background-color: #ffe4c4;
+        color: #8b0000;
+        font-size: 2.5em;
+        font-weight: 900;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 12px;
+        transition: all 0.2s;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+        -webkit-text-stroke: 0.5px #8b0000;
+        margin: 0;
+      }
+      button {
+        padding: 12px 20px;
+        min-width: 100px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #ffe4c4;
+        color: #8b0000;
+        border: none;
+        border-radius: 12px;
+        font-weight: bold;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transition: all 0.2s;
+      }
+      .win-message {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(255, 228, 196, 0.95);
+        color: #8b0000;
+        padding: 20px 40px;
+        border-radius: 20px;
+        font-size: 1.5em;
+        font-weight: bold;
+        display: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        animation: popIn 0.3s ease-out;
+        z-index: 1000;
+      }
+      .tile:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+      button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        background-color: #ffdab9;
+      }
+      .tile.empty {
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+      }
     </style>
   </head>
   <body>
@@ -60,7 +143,7 @@
         <ul>
           <li><a href="/index.html">Trang Chủ</a></li>
           <li><a href="/webcon/about.html">Giới Thiệu</a></li>
-          <li><a href="/webcon/services.html">Dịch Vụ</a></li>
+          <li><a href="/webcon/comment.html">Bình Luận</a></li>
           <li><a href="/webcon/contact.html">Liên Hệ</a></li>
         </ul>
       </nav>
@@ -79,6 +162,12 @@
           </button>
           <button class="mode-btn" onclick="startGame('pvc')">
             Người với Máy
+          </button>
+          <button
+            class="mode-btn"
+            onclick="window.location.href='/webcon/about.html#caro'"
+          >
+            Xem hướng dẫn
           </button>
         </div>
         <div class="game-info" id="gameInfo" style="display: none">

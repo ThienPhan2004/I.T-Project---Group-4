@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Word Finding</title>
+    <link rel="icon" type="image/png" href="/webImage/favicon.png" />
     <link rel="stylesheet" href="/styles.css" />
     <style>
       body {
@@ -119,7 +120,7 @@
         <ul>
           <li><a href="/index.html">Trang Chủ</a></li>
           <li><a href="/webcon/about.html">Giới Thiệu</a></li>
-          <li><a href="/webcon/services.html">Dịch Vụ</a></li>
+          <li><a href="/webcon/comment.html">Bình Luận</a></li>
           <li><a href="/webcon/contact.html">Liên Hệ</a></li>
         </ul>
       </nav>
@@ -137,6 +138,12 @@
         <div class="grid" id="grid"></div>
         <button class="btn" onclick="newGame()">New Game</button>
         <button class="btn" onclick="showHint()">Hint</button>
+        <button
+          class="btn"
+          onclick="window.location.href='/webcon/about.html#word-finding'"
+        >
+          Xem hướng dẫn
+        </button>
       </div>
       <script src="wordfinding.js"></script>
     </div>

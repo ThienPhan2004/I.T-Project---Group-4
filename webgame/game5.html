@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Minesweeper</title>
+    <link rel="icon" type="image/png" href="/webImage/favicon.png" />
     <link rel="stylesheet" href="/styles.css" />
     <style>
       .container {
@@ -74,7 +75,7 @@
         <ul>
           <li><a href="/index.html">Trang Chủ</a></li>
           <li><a href="/webcon/about.html">Giới Thiệu</a></li>
-          <li><a href="/webcon/services.html">Dịch Vụ</a></li>
+          <li><a href="/webcon/comment.html">Bình Luận</a></li>
           <li><a href="/webcon/contact.html">Liên Hệ</a></li>
         </ul>
       </nav>
@@ -97,6 +98,12 @@
           </button>
           <button class="difficulty-btn" onclick="startGame('hard')">
             Khó (30x16, 99 bom)
+          </button>
+          <button
+            class="difficulty-btn"
+            onclick="window.location.href='/webcon/about.html#minesweeper'"
+          >
+            Xem hướng dẫn
           </button>
         </div>
         <div id="game-container">

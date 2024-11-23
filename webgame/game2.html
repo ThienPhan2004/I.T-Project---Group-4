@@ -4,7 +4,189 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cờ Vua</title>
+    <link rel="icon" type="image/png" href="/webImage/favicon.png" />
     <link rel="stylesheet" href="/styles.css" />
+    <style>
+      body {
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+      }
+
+      .game-container {
+        text-align: center;
+        background-color: white;
+        padding: 30px;
+        border-radius: 25px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        width: 90%;
+      }
+
+      h1 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      #menu-screen {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .menu-btn,
+      .control-btn,
+      .modal button {
+        padding: 15px 30px;
+        font-size: 18px;
+        margin: 10px;
+        cursor: pointer;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .menu-btn:hover,
+      .control-btn:hover,
+      .modal button:hover {
+        background-color: #45a049;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .menu-btn:active,
+      .control-btn:active,
+      .modal button:active {
+        transform: translateY(-1px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      #game-screen {
+        display: none;
+      }
+
+      #chessboard {
+        width: 560px;
+        height: 560px;
+        margin: 20px auto;
+        border: 2px solid #333;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+      }
+
+      .square {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .white {
+        background-color: #f0d9b5;
+      }
+
+      .black {
+        background-color: #b58863;
+      }
+
+      .square:hover {
+        opacity: 0.8;
+      }
+
+      .selected {
+        background-color: #aaf0aa !important;
+      }
+
+      .valid-move {
+        background-color: rgba(144, 238, 144, 0.5) !important;
+      }
+
+      .in-check {
+        background-color: rgba(255, 0, 0, 0.5) !important;
+      }
+
+      .game-info {
+        margin: 20px 0;
+        font-size: 1.2em;
+        color: #333;
+      }
+
+      .controls {
+        margin-top: 20px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        text-align: center;
+      }
+
+      .modal h2 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .modal button {
+        padding: 10px 20px;
+        margin: 10px;
+        cursor: pointer;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        transition: all 0.3s;
+      }
+
+      .modal button:hover {
+        background-color: #45a049;
+      }
+
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+      }
+
+      @media (max-width: 600px) {
+        #chessboard {
+          width: 320px;
+          height: 320px;
+        }
+
+        .square {
+          width: 40px;
+          height: 40px;
+          font-size: 24px;
+        }
+
+        .menu-btn,
+        .control-btn {
+          padding: 8px 16px;
+          font-size: 14px;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -13,7 +195,7 @@
         <ul>
           <li><a href="/index.html">Trang Chủ</a></li>
           <li><a href="/webcon/about.html">Giới Thiệu</a></li>
-          <li><a href="/webcon/services.html">Dịch Vụ</a></li>
+          <li><a href="/webcon/comment.html">Bình Luận</a></li>
           <li><a href="/webcon/contact.html">Liên Hệ</a></li>
         </ul>
       </nav>
@@ -21,6 +203,45 @@
 
     <div class="content">
       <h1>Cờ Vua</h1>
+      <div class="game-container">
+        <h1>Chess Game</h1>
+
+        <div id="menu-screen">
+          <button class="menu-btn" onclick="startGame('pvp')">
+            Player vs Player
+          </button>
+          <button class="menu-btn" onclick="startGame('pvc')">
+            Player vs Computer
+          </button>
+          <button
+            class="menu-btn"
+            onclick="window.location.href='/webcon/about.html#chess'"
+          >
+            Xem hướng dẫn
+          </button>
+        </div>
+
+        <div id="game-screen">
+          <div class="game-info">
+            <span id="current-turn">White's turn</span>
+          </div>
+          <div id="chessboard"></div>
+          <div class="controls">
+            <button class="control-btn" onclick="resetGame()">New Game</button>
+            <button class="control-btn" onclick="showMenu()">Main Menu</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="game-over-modal">
+        <h2 id="winner-text"></h2>
+        <button onclick="resetGame()">Play Again</button>
+        <button onclick="showMenu()">Main Menu</button>
+      </div>
+
+      <div class="overlay" id="overlay"></div>
+
+      <script src="chess.js"></script>
     </div>
 
     <footer>
