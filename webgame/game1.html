@@ -134,54 +134,68 @@
         border-radius: 12px;
         box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
       }
+      .content {
+        text-align: center;
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+        background: rgba(248, 249, 250, 0.9);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+      .content h1 {
+        color: #2c3e50;
+        margin: 0 auto 20px;
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      }
     </style>
   </head>
   <body>
     <header>
-      <h1>Game</h1>
+      <h1>Game<</h1>
       <nav>
         <ul>
-          <li><a href="/index.html">Trang Chủ</a></li>
-          <li><a href="/webcon/about.html">Giới Thiệu</a></li>
-          <li><a href="/webcon/comment.html">Bình Luận</a></li>
-          <li><a href="/webcon/contact.html">Liên Hệ</a></li>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/webcon/about.html">About</a></li>
+          <li><a href="/webcon/comment.html">Comments</a></li>
+          <li><a href="/webcon/contact.html">Contact</a></li>
         </ul>
       </nav>
     </header>
-
+    <br />
     <div class="content">
       <h1>Caro</h1>
-    </div>
-
-    <div class="content">
       <div class="container">
         <div class="mode-selection" id="modeSelection">
-          <h1>Chọn chế độ chơi</h1>
+          <h1>Select game mode</h1>
           <button class="mode-btn" onclick="startGame('pvp')">
-            Người với Người
+            Human vs Human
           </button>
           <button class="mode-btn" onclick="startGame('pvc')">
-            Người với Máy
+            Human vs Computer
           </button>
           <button
             class="mode-btn"
             onclick="window.location.href='/webcon/about.html#caro'"
           >
-            Xem hướng dẫn
+            View tutorial
           </button>
         </div>
         <div class="game-info" id="gameInfo" style="display: none">
-          Lượt của X
+          Turn of X
         </div>
         <button class="back-btn" id="backBtn" onclick="backToMenu()">
-          Quay lại menu
+          Back to menu
         </button>
         <button class="reset-btn" id="resetBtn" onclick="resetGame()">
-          Chơi lại
+          Play again
         </button>
       </div>
       <script src="caro.js"></script>
     </div>
+    <br />
 
     <footer>
       <p>&copy; 2024 Copyright. All rights reserved.</p>

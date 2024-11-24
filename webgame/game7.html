@@ -82,18 +82,27 @@
       }
 
       .btn {
-        padding: 10px 20px;
-        background-color: #4caf50;
+        padding: 12px 25px;
+        background: linear-gradient(145deg, #4caf50, #45a049);
         color: white;
         border: none;
-        border-radius: 5px;
+        border-radius: 8px;
         cursor: pointer;
         font-size: 16px;
-        margin: 5px;
+        min-width: 150px; /* Giảm chiều rộng tối thiểu */
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       }
 
       .btn:hover {
-        background-color: #45a049;
+        background: linear-gradient(145deg, #45a049, #388e3c);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       }
 
       @keyframes victory {
@@ -111,6 +120,29 @@
       .victory {
         animation: victory 0.5s ease-in-out;
       }
+
+      /* Style cho container chứa các nút */
+      .button-container {
+        display: flex;
+        flex-direction: row; /* từ column sang row */
+        justify-content: center; /* Căn giữa theo chiều ngang */
+        gap: 20px; /* khoảng cách giữa các nút */
+        margin: 20px 0;
+        flex-wrap: wrap; /* Cho phép wrap khi màn hình nhỏ */
+      }
+
+      /* Responsive */
+      @media (max-width: 600px) {
+        .button-container {
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+        }
+
+        .btn {
+          width: 200px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -118,17 +150,13 @@
       <h1>Game</h1>
       <nav>
         <ul>
-          <li><a href="/index.html">Trang Chủ</a></li>
-          <li><a href="/webcon/about.html">Giới Thiệu</a></li>
-          <li><a href="/webcon/comment.html">Bình Luận</a></li>
-          <li><a href="/webcon/contact.html">Liên Hệ</a></li>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/webcon/about.html">About</a></li>
+          <li><a href="/webcon/comment.html">Comments</a></li>
+          <li><a href="/webcon/contact.html">Contact</a></li>
         </ul>
       </nav>
     </header>
-
-    <div class="content">
-      <h1>Word Finding</h1>
-    </div>
 
     <div class="content">
       <div class="game-container">
@@ -136,14 +164,16 @@
         <div class="stats" id="stats">Time: 0:00</div>
         <div class="word-list" id="word-list"></div>
         <div class="grid" id="grid"></div>
-        <button class="btn" onclick="newGame()">New Game</button>
-        <button class="btn" onclick="showHint()">Hint</button>
-        <button
-          class="btn"
-          onclick="window.location.href='/webcon/about.html#word-finding'"
-        >
-          Xem hướng dẫn
-        </button>
+        <div class="button-container">
+          <button class="btn" onclick="newGame()">New Game</button>
+          <button class="btn" onclick="showHint()">Hint</button>
+          <button
+            class="btn"
+            onclick="window.location.href='/webcon/about.html#word-finding'"
+          >
+            How to Play
+          </button>
+        </div>
       </div>
       <script src="wordfinding.js"></script>
     </div>
