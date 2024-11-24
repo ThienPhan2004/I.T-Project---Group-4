@@ -20,13 +20,13 @@
         margin: 10px;
         font-size: 16px;
         cursor: pointer;
-        background-color: #4caf50;
+        background: linear-gradient(145deg, #2196f3, #1976d2);
         color: white;
         border: none;
         border-radius: 5px;
       }
       .difficulty-btn:hover {
-        background-color: #45a049;
+        background: linear-gradient(145deg, #216ead, #103d6b);
       }
       #game-container {
         display: none;
@@ -66,6 +66,38 @@
         margin: 10px;
         cursor: pointer;
       }
+      .game-buttons {
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+      #back-btn,
+      #play-again-btn {
+        padding: 12px 25px;
+        font-size: 16px;
+        cursor: pointer;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      #play-again-btn,
+      #back-btn {
+        background: linear-gradient(145deg, #2196f3, #1976d2);
+      }
+      #play-again-btn:hover,
+      #back-btn:hover {
+        background: linear-gradient(145deg, #1976d2, #1565c0);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+      #play-again-btn:active,
+      #back-btn:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
     </style>
   </head>
   <body>
@@ -73,48 +105,49 @@
       <h1>Game</h1>
       <nav>
         <ul>
-          <li><a href="/index.html">Trang Chủ</a></li>
-          <li><a href="/webcon/about.html">Giới Thiệu</a></li>
-          <li><a href="/webcon/comment.html">Bình Luận</a></li>
-          <li><a href="/webcon/contact.html">Liên Hệ</a></li>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/webcon/about.html">About</a></li>
+          <li><a href="/webcon/comment.html">Comments</a></li>
+          <li><a href="/webcon/contact.html">Contact</a></li>
         </ul>
       </nav>
     </header>
 
     <div class="content">
       <h1>Minesweeper</h1>
-    </div>
-
-    <div class="content">
       <div class="container">
-        <h1>Minesweeper</h1>
         <div id="menu">
-          <h2>Chọn độ khó</h2>
+          <h1>Select Difficulty</h1>
           <button class="difficulty-btn" onclick="startGame('easy')">
-            Dễ (9x9, 10 bom)
+            Easy (9x9, 10 mines)
           </button>
           <button class="difficulty-btn" onclick="startGame('medium')">
-            Trung bình (16x16, 40 bom)
+            Medium (16x16, 40 mines)
           </button>
           <button class="difficulty-btn" onclick="startGame('hard')">
-            Khó (30x16, 99 bom)
+            Hard (30x16, 99 mines)
           </button>
           <button
             class="difficulty-btn"
             onclick="window.location.href='/webcon/about.html#minesweeper'"
           >
-            Xem hướng dẫn
+            How to Play
           </button>
         </div>
         <div id="game-container">
           <div id="game-info">
-            <span>Số bom còn lại: <span id="mines-left">0</span></span>
+            <span>Mines Left: <span id="mines-left">0</span></span>
             <span style="margin-left: 20px"
-              >Thời gian: <span id="timer">0</span>s</span
+              >Time: <span id="timer">0</span>s</span
             >
           </div>
           <div id="grid"></div>
-          <button id="back-btn" onclick="backToMenu()">Quay lại menu</button>
+          <div class="game-buttons">
+            <button id="play-again-btn" onclick="resetGame()">
+              Play Again
+            </button>
+            <button id="back-btn" onclick="backToMenu()">Back to Menu</button>
+          </div>
         </div>
       </div>
       <script src="minesweeper.js"></script>
